@@ -1,0 +1,35 @@
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Script File: clinicalTrialsGov2R 
+# Date of creation: 18 Feb 2017
+# Date of last modification: 21 Apr 2016
+# Author: Seraya Maouche <seraya.maouche@iscb.org>
+# Short Description: This script provides functionalities to read and all
+#                    PMC dataset provided by Epidemium 
+#                    The script will generates a summary file and create a 
+#                    corpus from all XML files
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#***** Install rclinicaltrials from CRAN
+install.packages("rclinicaltrials")
+
+#***** Installing the last version from Github
+install.packages("devtools")
+library(devtools)
+install_github("sachsmc/rclinicaltrials")
+
+
+head(advanced_search_terms)
+
+library(rclinicaltrials)
+library(ggplot2)
+library(dplyr)
+
+# ** searching ClinicalTrials.Gov
+res <- clinicaltrials_search(query = 'cancer+disease')
+str(res
+
+clinicaltrials_count(query = "cancer")
+clinicaltrials_count(query = c("type=Intr", "cond=cancer"))
+
+trials <- clinicaltrials_download(query = 'myeloma', count = 10, include_results = TRUE)
+str(trials)
